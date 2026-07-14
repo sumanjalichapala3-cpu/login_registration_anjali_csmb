@@ -1,106 +1,95 @@
-.register-container {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f3f4f6;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  padding: 40px 20px;
-  box-sizing: border-box;
+  background-color: #f8fafc;
+  padding: 20px;
 }
 
-.register-card {
+.login-card {
   background: #ffffff;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  max-width: 400px;
 }
 
-.register-card h2 {
+.login-card h2 {
   margin-bottom: 24px;
-  color: #111827;
   text-align: center;
+  color: #1e293b;
+  font-size: 28px;
 }
 
-.register-card .input-group {
+.input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 18px;
-  width: 100%; /* Ensures inputs stretch to the card edges */
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.register-card .input-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #374151;
+.input-group label {
   margin-bottom: 6px;
-  text-align: center; /* Keeps your text aligned nicely above boxes */
-}
-
-.register-card .input-group input,
-.register-card .custom-select {
-  width: 100%; /* Keeps original box styling but prevents clipping */
-  padding: 10px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  color: #475569;
+  font-weight: 500;
   font-size: 14px;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  color: #1f2937;
 }
 
-/* Fixes browser autofill forcing dark background colors */
-.register-card input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
-  -webkit-text-fill-color: #1f2937 !important;
-}
-
-.register-card .radio-group {
-  display: flex;
-  gap: 20px;
-  justify-content: center; /* Centers your male/female selectors nicely */
-}
-
-.register-card .radio-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.register-card .password-field-container {
+/* Icon Alignment Overrides */
+.icon-input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.register-card .password-toggle-btn {
+.icon-input-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.icon-input-wrapper input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-group > input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.input-group > input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.eye-toggle-btn {
   position: absolute;
   right: 12px;
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.register-card .checkbox-group {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.register-card .checkbox-group label {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  justify-content: center;
+  padding: 0;
+  height: 100%;
 }
 
-.register-btn {
+.login-btn {
   width: 100%;
   padding: 12px;
   background-color: #4f46e5;
@@ -110,8 +99,28 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
 }
 
-.register-btn:hover {
+.login-btn:hover {
   background-color: #4338ca;
+}
+
+.auth-switch-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.auth-link {
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.auth-link:hover {
+  color: #3730a3;
 }
