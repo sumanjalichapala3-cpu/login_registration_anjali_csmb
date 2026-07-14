@@ -1,76 +1,188 @@
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f3f4f6;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #f8fafc;
+  padding: 40px 20px;
 }
 
-.login-card {
+.register-card {
   background: #ffffff;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   width: 100%;
-  max-width: 400px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  max-width: 450px; 
 }
 
-.login-card h2 {
+/* ➡️ Keeps "Create Account" perfectly centered ⬅️ */
+.register-card h2 {
   margin-bottom: 24px;
-  color: #111827;
-  text-align: center;
+  text-align: center; /* Centered title text */
+  color: #1e293b;
+  font-size: 26px;
 }
 
-.login-card .input-group {
+/* Enforces structural block flow downwards */
+.vertical-form-flow {
   display: flex;
   flex-direction: column;
-  margin-bottom: 18px;
   width: 100%;
 }
 
-.login-card .input-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 6px;
-  text-align: center; /* Keeps the label centered */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  align-items: flex-start; /* Keeps the input boxes and labels pushed to the left side */
 }
 
-.login-card .input-group input {
+/* Aligns input field labels to the left */
+.input-group label {
+  margin-bottom: 6px;
+  color: #475569;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left; 
+  width: 100%;
+}
+
+/* Styling targeting regular Text Inputs and the Dropdown Select option */
+.input-group > input,
+.input-group > select {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #cbd5e1;
   border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
+  font-size: 15px;
+  outline: none;
   background-color: #ffffff;
-  color: #1f2937;
+  color: #1e293b;
+  box-sizing: border-box;
+  height: 42px; 
 }
 
-/* Fixes browser autofill forcing dark background colors */
-.login-card input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
-  -webkit-text-fill-color: #1f2937 !important;
+.input-group > input:focus,
+.input-group > select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
-.login-card .password-field-container {
+/* Icons styling inside relative textboxes */
+.icon-input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.login-card .password-toggle-btn {
+.icon-input-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-sizing: border-box;
+  height: 42px;
+}
+
+.icon-input-wrapper input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.eye-toggle-btn {
   position: absolute;
   right: 12px;
   background: none;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 100%;
 }
 
-.login-btn {
+.input-icon-pointer {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Radio Button Layout Options - Aligned to the left */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 42px;
+  justify-content: flex-start; 
+  width: 100%;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #334155;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  cursor: pointer;
+  accent-color: #4f46e5;
+  width: 16px;
+  height: 16px;
+}
+
+.terms-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.terms-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+.terms-group label {
+  font-size: 14px;
+  color: #475569;
+  cursor: pointer;
+  margin: 0;
+}
+
+.terms-group span {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.register-btn {
   width: 100%;
   padding: 12px;
   background-color: #4f46e5;
@@ -80,8 +192,10 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
 }
 
-.login-btn:hover {
+.register-btn:hover {
   background-color: #4338ca;
 }
